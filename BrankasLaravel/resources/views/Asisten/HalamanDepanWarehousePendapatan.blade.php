@@ -62,21 +62,7 @@
 
 
 
-  <div id="DataGudang" class="tabcontent">
-    <table border="1" cellspacing="0" width ="20%">
-        <tr>
-          <th> Lokais Gudang</th>
-        </tr>
-        @foreach($status->gudangs  as $object)
-        <tr>
-        <td>{{$object->lokasigudang}}</td>
-        </tr>
-        @endforeach
-    </table>
-
-  </div>
-
-
+Comming Soon
 
 
 

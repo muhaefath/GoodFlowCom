@@ -81,13 +81,13 @@
 
             <div class="content">
               <div class="title m-b-md ">
-                Bussiness Assiten
+              <img src = "{{ asset('/Logo2.png') }}" width ="400" height = "">
               </div>
 
                 <div class="links">
                     <a href="/">Home</a>
                     <a href="/bussinessast/Warehouse/login">Warehouse</a>
-                    <a href="/bussinessast/Assisten/login">Assiten</a>
+                    <a href="/bussinessast/Assisten/login">Assisten</a>
 
                 </div>
             </div>

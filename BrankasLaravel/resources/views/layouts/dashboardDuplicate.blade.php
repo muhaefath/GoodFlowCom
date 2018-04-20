@@ -12,15 +12,145 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                  <a class="navbar-brand " href="{{ url ('') }}"><img  src = "{{ asset('/Logo2.png') }}" width ="80" height = ""  >
-
+                <a class="navbar-brand" href="{{ url ('') }}">good flow</a>
                 @yield('Headline')
             </div>
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:orange">
+                        <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>Read All Messages</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-messages -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:orange">
+                        <i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-tasks">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 1</strong>
+                                        <span class="pull-right text-muted">40% Complete</span>
+                                    </p>
 
+                                        <div>
+                                        @include('widgets.progress', array('animated'=> true, 'class'=>'success', 'value'=>'40'))
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
 
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#" style="color:orange">
+                                <div>
+                                    <p>
+                                        <strong>Task 2</strong>
+                                        <span class="pull-right text-muted">20% Complete</span>
+                                    </p>
+
+                                        <div>
+                                        @include('widgets.progress', array('animated'=> true, 'class'=>'info', 'value'=>'20'))
+                                            <span class="sr-only">20% Complete</span>
+                                        </div>
+
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#" style="color:orange">
+                                <div>
+                                    <p>
+                                        <strong>Task 3</strong>
+                                        <span class="pull-right text-muted">60% Complete</span>
+                                    </p>
+
+                                        <div>
+                                        @include('widgets.progress', array('animated'=> true, 'class'=>'warning', 'value'=>'60'))
+                                            <span class="sr-only">60% Complete (warning)</span>
+                                        </div>
+
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#" style="color:orange">
+                                <div>
+                                    <p>
+                                        <strong>Task 4</strong>
+                                        <span class="pull-right text-muted">80% Complete</span>
+                                    </p>
+
+                                        <div>
+                                        @include('widgets.progress', array('animated'=> true,'class'=>'danger', 'value'=>'80'))
+                                            <span class="sr-only">80% Complete (danger)</span>
+                                        </div>
+
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#" style="color:orange">
+                                <strong>See All Tasks</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-tasks -->
+                </li>
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:orange">
@@ -116,17 +246,17 @@
                             <!-- /input-group -->
                         </li>
                         <li {{ (Request::is('/') ? 'class="active"' : '') }}>
-                            <a style="color:orange" href="{{ url ('/bussinessman/inventory/databarang') }}"><i class="fa fa-dashboard fa-fw"></i> Data Barang</a>
+                            <a style="color:orange" href="{{ url ('') }}"><i class="fa fa-dashboard fa-fw"></i> Data Barang</a>
                         </li>
                         <li {{ (Request::is('*charts') ? 'class="active"' : '') }}>
-                            <a style="color:orange" href="{{ url ('/bussinessman/inventory/datagudang') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Data Gudang</a>
+                            <a style="color:orange" href="{{ url ('/bussinessman/order/filter') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Data Gudang</a>
                             <!-- /.nav-second-level -->
                         </li>
                         <li {{ (Request::is('*tables') ? 'class="active"' : '') }}>
-                            <a style="color:orange" href="{{ url ('/bussinessman/inventory/tambah') }}"><i class="fa fa-table fa-fw"></i> Tambah</a>
+                            <a style="color:orange" href="{{ url ('tables') }}"><i class="fa fa-table fa-fw"></i> Tambah</a>
                         </li>
                         <li {{ (Request::is('*forms') ? 'class="active"' : '') }}>
-                            <a style="color:orange" href="{{ url ('/bussinessman/inventory/status') }}"><i class="fa fa-edit fa-fw"></i> Status</a>
+                            <a style="color:orange" href="{{ url ('forms') }}"><i class="fa fa-edit fa-fw"></i> Status</a>
                         </li>
                         <!--
                         <li >

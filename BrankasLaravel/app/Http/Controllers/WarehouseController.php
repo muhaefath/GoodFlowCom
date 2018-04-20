@@ -37,6 +37,46 @@ class WarehouseController extends Controller
 
   }
 
+  public function dataBarang()
+  {
+      $userid = auth('warehouseman')->user()->id;
+      $statusnya = warehousemans::where('id','=',$userid)->first();
+
+
+    //  dd($barangs->where('id_Lokasi_Gudang','=',3));
+
+
+      return view('Asisten/HalamanDepanWarehouseDataBarang',['status'=>$statusnya]);
+
+  }
+
+  public function History()
+  {
+      $userid = auth('warehouseman')->user()->id;
+      $statusnya = warehousemans::where('id','=',$userid)->first();
+
+
+    //  dd($barangs->where('id_Lokasi_Gudang','=',3));
+
+
+      return view('Asisten/HalamanDepanWarehouseHistory',['status'=>$statusnya]);
+
+  }
+
+  public function Pendapatan()
+  {
+      $userid = auth('warehouseman')->user()->id;
+      $statusnya = warehousemans::where('id','=',$userid)->first();
+
+
+    //  dd($barangs->where('id_Lokasi_Gudang','=',3));
+
+
+      return view('Asisten/HalamanDepanWarehousePendapatan',['status'=>$statusnya]);
+
+  }
+
+
 
   public function daftargudang()
   {

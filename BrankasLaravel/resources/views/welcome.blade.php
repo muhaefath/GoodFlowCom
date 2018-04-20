@@ -81,12 +81,13 @@
 
             <div class="content">
               <div class="title m-b-md ">
-                good flow
+
+                <img src = "{{ asset('/Logo2.png') }}" width ="400" height = "">
               </div>
 
                 <div class="links">
-                    <a href="/bussinessman">Bussinessman</a>
-                    <a href="/bussinessast">Bussiness Assiten</a>
+                    <a href="/bussinessman">Businessman</a>
+                    <a href="/bussinessast">Business Assisten</a>
 
                 </div>
             </div>

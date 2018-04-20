@@ -116,17 +116,17 @@
                             <!-- /input-group -->
                         </li>
                         <li {{ (Request::is('/') ? 'class="active"' : '') }}>
-                            <a style="color:orange" href="{{ url ('/bussinessman/inventory/databarang') }}"><i class="fa fa-dashboard fa-fw"></i> Data Barang</a>
+                            <a style="color:orange" href="{{ url ('/bussinessast/Warehouse/inventory') }}"><i class="fa fa-dashboard fa-fw"></i> Data Gudang</a>
                         </li>
                         <li {{ (Request::is('*charts') ? 'class="active"' : '') }}>
-                            <a style="color:orange" href="{{ url ('/bussinessman/inventory/datagudang') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Data Gudang</a>
+                            <a style="color:orange" href="{{ url ('/bussinessast/Warehouse/inventory/dataBarang') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Data Barang</a>
                             <!-- /.nav-second-level -->
                         </li>
                         <li {{ (Request::is('*tables') ? 'class="active"' : '') }}>
-                            <a style="color:orange" href="{{ url ('/bussinessman/inventory/tambah') }}"><i class="fa fa-table fa-fw"></i> Tambah</a>
+                            <a style="color:orange" href="{{ url ('/bussinessast/Warehouse/inventory/History') }}"><i class="fa fa-table fa-fw"></i> History</a>
                         </li>
                         <li {{ (Request::is('*forms') ? 'class="active"' : '') }}>
-                            <a style="color:orange" href="{{ url ('/bussinessman/inventory/status') }}"><i class="fa fa-edit fa-fw"></i> Status</a>
+                            <a style="color:orange" href="{{ url ('/bussinessast/Warehouse/inventory/Pendapatan') }}"><i class="fa fa-edit fa-fw"></i>Income</a>
                         </li>
                         <!--
                         <li >

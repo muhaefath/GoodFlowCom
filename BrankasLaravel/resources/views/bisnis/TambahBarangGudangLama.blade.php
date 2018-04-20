@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
 
 @section('AturCSS')
         <style>
@@ -52,37 +52,32 @@
 
 @endsection
 @section('Headline')
-    <a class="nav-link" href={{url('/bussinessman/order/filter') }}>  Order
-    <a class="nav-link" href={{url('/bussinessman/order/pilihgudang') }}>  Cari Gudang
-    <a class="nav-link" href={{url('/bussinessman/inventory/databarang') }}>  Inventory
-    <a class="nav-link" href={{url('/bussinessman/history') }}>  History
-    <a class="nav-link" href={{url('/bussinessman/staistik') }}>  Statistik
+<a class="navbar-brand" href={{url('/bussinessman/order/filter') }}>  Order
+<a class="navbar-brand" href={{url('/bussinessman/order/pilihgudang') }}>  Cari Gudang
+<a class="navbar-brand" href={{url('/bussinessman/inventory/databarang') }}>  Inventory
+<a class="navbar-brand" href={{url('/bussinessman/history') }}>  History
+<a class="navbar-brand" href={{url('/bussinessman/staistik') }}>  Statistik
 @endsection
 
 
-@section('content')
+@section('section')
+
+              <table border="1" cellspacing="0" width ="100%">
+                <tr>
+                  <th> Nama Pemilik </th><th>Lokasi Gudang</th><th>Deskripsi</th><th>Habis Kontrak</th>
+                </tr>
+                @foreach($status->barangs  as $object)
+                <tr>
+                     <td > <a href='/bussinessman/order/pilihgudang/{{$object->gudangs->id}}' > {{$object->gudang}} </a></td>
+                     <td> <a href='/bussinessman/order/profilepemilikgudang/{{$object->gudangs->warehousemans->id}}'>  {{$object->gudangs->warehousemans->name}} </a> </td>
+                     <td> </td>
+                      <td> </td>
+                </tr>
+                @endforeach
+            </table>
 
 
 
-        <div id="DataGudang" class="tabcontent">
-
-          <table border="1" cellspacing="0" width ="220%">
-            <tr>
-              <th> Nama Pemilik </th><th>Lokasi Gudang</th><th>Deskripsi</th><th>Habis Kontrak</th>
-            </tr>
-            @foreach($status->barangs  as $object)
-            <tr>
-                 <td > <a href='/bussinessman/order/pilihgudang/{{$object->gudangs->id}}' > {{$object->gudang}} </a></td>
-                 <td> <a href='/bussinessman/order/profilepemilikgudang/{{$object->gudangs->warehousemans->id}}'>  {{$object->gudangs->warehousemans->name}} </a> </td>
-                 <td> </td>
-                  <td> </td>
-            </tr>
-            @endforeach
-        </table>
-
-        </div>
-
-
-
+</div>
 
 @endsection

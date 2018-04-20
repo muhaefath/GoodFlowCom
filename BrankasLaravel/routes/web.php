@@ -33,6 +33,10 @@ Route::post('/bussinessman/order/{id}/sukses','Bisnisman@PesanBarangSukses')->mi
 // pengaturan Pada Menu Bisnisman
 
 Route::get('/bussinessman/inventory/databarang','Bisnisman@inventory')->middleware('auth');
+Route::get('/bussinessman/inventory/datagudang','Bisnisman@inventoryDataGudang')->middleware('auth');
+Route::get('/bussinessman/inventory/tambah','Bisnisman@inventoryTambah')->middleware('auth');
+Route::get('/bussinessman/inventory/status','Bisnisman@inventoryStatus')->middleware('auth');
+
 Route::get('/bussinessman/inventory/databarang/tambahbarang','Bisnisman@TambahBarang')->middleware('auth');
 Route::post('/bussinessman/inventory/databarang','Bisnisman@SuksesStore2');
 
@@ -64,6 +68,14 @@ Route::get('/bussinessast/Warehouse/login','Auth\WarehousemanLoginController@Sho
 Route::post('/bussinessast/Warehouse/login','Auth\WarehousemanLoginController@LoginWarehouseman')->name('warehouseman.login.submit');
 
 Route::get('/bussinessast/Warehouse/inventory','WarehouseController@TampilanDepanWarehouse')->name('warehouseman.dashboard');
+Route::get('/bussinessast/Warehouse/inventory/dataBarang','WarehouseController@dataBarang')->name('warehouseman.dashboard');
+Route::get('/bussinessast/Warehouse/inventory/barangDikirim','WarehouseController@barangDikirim')->name('warehouseman.dashboard');
+Route::get('/bussinessast/Warehouse/inventory/barangDiambil','WarehouseController@barangDiambil')->name('warehouseman.dashboard');
+Route::get('/bussinessast/Warehouse/inventory/History','WarehouseController@History')->name('warehouseman.dashboard');
+Route::get('/bussinessast/Warehouse/inventory/Pendapatan','WarehouseController@Pendapatan')->name('warehouseman.dashboard');
+Route::get('/bussinessast/Warehouse/inventory/barangHariIni','WarehouseController@barangHariIni')->name('warehouseman.dashboard');
+
+
 Route::get('/bussinessast/Warehouse/inventory/ProfileGudang/{id}','WarehouseController@ProfileGudang')->name('warehouseman.dashboard');
 Route::get('/bussinessast/Warehouse/daftargudang','WarehouseController@daftargudang')->name('warehouseman.daftargudang');
 Route::post('/bussinessast/Warehouse/inventory','WarehouseController@StoreGudang')->name('warehouseman.dashboard');

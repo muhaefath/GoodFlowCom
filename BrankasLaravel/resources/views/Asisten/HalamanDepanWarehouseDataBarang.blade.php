@@ -61,23 +61,31 @@
 @section('section')
 
 
+  <div id="DataBarangdiGudang" class="tabcontent">
+    <table border="1" cellspacing="0" width ="100%">
+        <tr>
+          <th> Nama Produk</th><th>Deskripsi</th><th>Quantity</th><th>Gudang</th><th>Status</th>
+        </tr>
 
-  <div id="DataGudang" class="tabcontent">
-    <table border="1" cellspacing="0" width ="20%">
-        <tr>
-          <th> Lokais Gudang</th>
-        </tr>
-        @foreach($status->gudangs  as $object)
-        <tr>
-        <td>{{$object->lokasigudang}}</td>
-        </tr>
+        @foreach($status->gudangs as $object)
+
+          <tr>
+            @foreach($object->barangs as $object2)
+            <tr>
+            <td> <a> {{$object2->nama}} </a></td>
+            <td> <a> {{$object2->deskripsi}} </a></td>
+            <td> <a> {{$object2->quantity}} </a></td>
+            <td> <a href="/bussinessast/Warehouse/inventory/ProfileGudang/{{$object2->gudangs->id}}"> {{$object2->gudangs->lokasigudang}} </a></td>
+            <td> <a> {{$object2->status}} </a></td>
+            </tr>
+            @endforeach
+          </tr>
+
         @endforeach
+
     </table>
 
   </div>
-
-
-
 
 
 @endsection

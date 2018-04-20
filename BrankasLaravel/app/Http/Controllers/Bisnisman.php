@@ -198,6 +198,48 @@ class Bisnisman extends Controller
 
   }
 
+  public function inventoryDataGudang()
+  {
+        ///$iduser = Auth::user();
+      $userid = auth()->user()->id;
+
+    $users = users::where('id','=',$userid)->first();  // cara penulisan model
+
+
+      return view('bisnis/inventoryDataGudang',['status'=>$users]);
+
+  }
+
+  public function inventoryTambah()
+  {
+        ///$iduser = Auth::user();
+      $userid = auth()->user()->id;
+
+
+    $gudangs = DB::table('barangs')->where('id_pemilik_barang','=',$userid)->get();
+
+
+      return view('bisnis/inventoryTambah',['gudang'=>$gudangs]);
+
+  }
+
+
+
+public function inventoryStatus()
+{
+      ///$iduser = Auth::user();
+    $userid = auth()->user()->id;
+
+  $users = users::where('id','=',$userid)->first();  // cara penulisan model
+
+
+  $gudangs = DB::table('barangs')->where('id_pemilik_barang','=',$userid)->get();
+    $users2 = users::where('id','=',$userid)->first();
+
+    return view('bisnis/inventoryStatus',['status'=>$users,'gudang'=>$gudangs]);
+
+}
+
   public function TambahBarang()
   {
     $userid = auth()->user()->id;
@@ -222,7 +264,7 @@ class Bisnisman extends Controller
   {
     //    $statusnya = InventoryData::all();
 
-        return view('bisnis/statistik',['status'=>$statusnya]);
+        return view('bisnis/statistik');
 
 
 

@@ -62,12 +62,13 @@
 
 @section('section')
 
+<!--
   <div class="tab">
     <button class="tablinks" onclick="openCity(event, 'DataBarang')" id="defaultOpen">Data Barang</button>
     <button class="tablinks" onclick="openCity(event, 'DataGudang')">Data Gudang</button>
     <button class="tablinks" onclick="openCity(event, 'Tambah')">Tambah</button>
     <button class="tablinks" onclick="openCity(event, 'Status')">Status</button>
-
+-->
   </div>
 
 
@@ -105,86 +106,6 @@
 
 
         </div>
-
-        <div id="DataGudang" class="tabcontent">
-
-          <table  class="table table-condensed table-bordered table-striped">
-            <tr>
-              <th> Nama Pemilik </th><th>Lokasi Gudang</th><th>Deskripsi</th><th>Habis Kontrak</th>
-            </tr>
-            @foreach($status->barangs  as $object)
-            <tr>
-                 <td > <a href='/bussinessman/order/pilihgudang/{{$object->gudangs->id}}' > {{$object->gudang}} </a></td>
-                 <td> <a href='/bussinessman/order/profilepemilikgudang/{{$object->gudangs->warehousemans->id}}'>  {{$object->gudangs->warehousemans->name}} </a> </td>
-                 <td> </td>
-                <td> </td>
-            </tr>
-            @endforeach
-        </table>
-
-
-
-
-        </div>
-
-        <div id="Tambah" class="tabcontent">
-
-
-                <form id="regForm" method ="POST" action="/bussinessman/inventory/databarang">
-                    <!--
-                          <div class="tab2">Daftar Barang:
-                              <p><input placeholder="Nama Barang" oninput="this.className = ''" name="NamaBarang"></p>
-                              <p><input placeholder="Deskripsi" oninput="this.className = ''" name="Deskripsi"></p>
-                              <p><input placeholder="quantity" oninput="this.className = ''" name="qty"></p>
-
-                              <div class="form-group row">
-
-                                  <div class="col-md-6">
-                                      <select id="Lokasi"   name="LokasiGudang" required >
-
-                                        @foreach($gudang as $object)
-                                        <option value= "{{$object->gudang}}" >
-                                          {{$object->gudang}}
-
-                                        </option>
-                                       @endforeach
-
-                                      </select>
-                                  </div>
-                              </div>
-
-                          </div>
-
-
-                          <div style="overflow:auto;">
-                            <div style="float:left;">
-                              <button type="button" id="Reorder" onclick="nextPrev2()">Tambah</button>
-                              <button type="button" id="nextBtn" onclick="nextPrev()">Submit</button>
-                            </div>
-                          </div>
-
-                          {{csrf_field()}}
-                  </form>
-                -->
-              <div id="Tombol1">
-                    <div>
-                      <a  href="/bussinessman/order/pilihgudang"> Gudang Baru </a>
-                    </div>
-
-                      <div>
-                          <a  href="/bussinessman/inventory/databarang/tambahbarang"> Gudang Lama </a>
-                      <div>
-              </div>
-        </div>
-
-
-        <div id="Status" class="tabcontent">
-
-
-
-        </div>
-
-
 
         <script>
 

@@ -18,8 +18,8 @@
                    <span class="icon-bar"></span>
                    <span class="icon-bar"></span>
                </button>
-               <a class="navbar-brand" href="{{ url ('') }}">good flow</a>
-               <a class="navbar-brand " href={{url('/bussinessman/order/filter') }}>  Order
+                <a class="navbar-brand " href="{{ url ('') }}"><img  src = "{{ asset('/Logo2.png') }}" width ="80" height = ""  >
+               <a class="navbar-brand " href={{url('/bussinessman/order/filter') }} width = "100" >  Order
                  <a class="navbar-brand" href={{url('/bussinessman/order/pilihgudang') }}>  Cari Gudang
                <a class="navbar-brand" href={{url('/bussinessman/inventory/databarang') }}>  Inventory
                <a class="navbar-brand" href={{url('/bussinessman/history') }}>  History
